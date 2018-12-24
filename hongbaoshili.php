@@ -43,7 +43,7 @@ if ($act == 'jiesuan'){ //发放奖金
         $xml = arrayToXml($datas);
         $result = postXmlSSLCurl($xml, $dsourl);
 
-        $reObj = simplexml_load_string($result, 'SimpleXMLElement', LIBXML_NOCDATA);
+        $reObj = simplexml_load_string($result, 'SimpleXMLElement', LIBXML_NOCDATA); //将微信返还的XML 转换为 对象形式
         $result_code = trim($reObj->result_code);
         $mch_billno = trim($reObj->mch_billno);
 
